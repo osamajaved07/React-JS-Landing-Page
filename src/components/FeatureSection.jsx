@@ -1,22 +1,52 @@
+import { motion } from "framer-motion";
 import { features } from "../constants";
 
 const FeatureSection = () => {
   return (
     <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
-      <div className="text-center">
-        <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+      <motion.div
+        className="text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: false }}
+      >
+        <motion.span
+          className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: false }}
+        >
           Feature
-        </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
+        </motion.span>
+        <motion.h2
+          className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false }}
+        >
           Easily build{" "}
           <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
             your code
           </span>
-        </h2>
-      </div>
+        </motion.h2>
+      </motion.div>
       <div className="flex flex-wrap mt-10 lg:mt-20">
         {features.map((feature, index) => (
-          <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-4">
+          <motion.div
+            key={index}
+            className="w-full sm:w-1/2 lg:w-1/3 p-4"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: "easeOut",
+            }}
+            viewport={{ once: false }}
+          >
             <div className="group transition-all duration-300 hover:border hover:border-orange-500 hover:shadow-md rounded-lg p-6 h-full ">
               <div className="flex items-start">
                 <div className="flex h-10 w-10 p-2 bg-neutral-900 text-orange-700 justify-center items-center rounded-full">
@@ -32,7 +62,7 @@ const FeatureSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
