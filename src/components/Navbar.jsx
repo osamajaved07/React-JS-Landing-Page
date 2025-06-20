@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -18,63 +19,51 @@ const Navbar = () => {
             <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
             <span className="text-xl tracking-tight">VirtualR</span>
           </div>
-          <ul className="hidden lg:flex ml-14 space-x-12 ">
+
+          {/* Desktop Nav */}
+          <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a
-                  href={item.href}
-                  className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
-                >
+                <Link to={item.href.replace("#", "")} smooth={true} duration={500} offset={-80} spy={true} className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full cursor-pointer">
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
+
+          {/* Desktop Buttons */}
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a
-              href="#"
-              className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800"
-            >
+            <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800">
               Sign In
             </a>
-            <a
-              href="#"
-              className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800"
-            >
+            <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800">
               Create an account
             </a>
           </div>
+
+          {/* Mobile Menu Toggle */}
           <div className="lg:hidden md:flex flex-col justify-end">
-            <button onClick={toggleNavbar}>
-              {mobileDrawerOpen ? <X /> : <Menu />}
-            </button>
+            <button onClick={toggleNavbar}>{mobileDrawerOpen ? <X /> : <Menu />}</button>
           </div>
         </div>
+
+        {/* Mobile Menu Drawer */}
         {mobileDrawerOpen && (
           <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
-                  <a
-                    href={item.href}
-                    className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
-                  >
+                  <Link to={item.href.replace("#", "")} smooth={true} duration={500} offset={-80} spy={true} onClick={toggleNavbar} className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full cursor-pointer">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
-            <div className="flex space-x-6">
-              <a
-                href="#"
-                className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800"
-              >
+            <div className="flex space-x-6 mt-8">
+              <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800">
                 Sign In
               </a>
-              <a
-                href="#"
-                className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800"
-              >
+              <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800">
                 Create an account
               </a>
             </div>
