@@ -7,7 +7,7 @@ const Workflow = () => {
   return (
     <div id="workflow" className="mt-20">
       <motion.h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide" initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} viewport={{ once: false }}>
-        Accelerate your <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">coding workflow.</span>
+        Accelerate your <span className="bg-gradient-to-r from-cyan-500 to-cyan-800 text-transparent bg-clip-text">coding workflow.</span>
       </motion.h2>
       <div className="flex flex-wrap justify-center">
         <motion.div className="p-2 w-full lg:w-1/2 flex justify-center" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.2 }} viewport={{ once: false }}>

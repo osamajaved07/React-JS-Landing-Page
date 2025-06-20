@@ -11,14 +11,14 @@ const Pricing = () => {
       <div className="flex flex-wrap">
         {pricingOptions.map((option, index) => (
           <motion.div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-2" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.2 }} viewport={{ once: false }}>
-            <div className="p-10 border border-neutral-700 rounded-xl bg-neutral-950 transition-all duration-300 hover:scale-[1.03] hover:border-orange-500 hover:shadow-lg hover:shadow-orange-500/20">
+            <div className="p-10 border border-neutral-700 rounded-xl bg-neutral-950 transition-all duration-300 hover:scale-[1.03] hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20">
               <p className="text-4xl mb-8">
                 {option.title}
-                {option.title === "Pro" && <span className="bg-gradient-to-r from-orange-500 to-red-400 text-transparent bg-clip-text text-xl mb-4 ml-2">(Most Popular)</span>}
+                {option.title === "Pro" && <span className="bg-gradient-to-r from-cyan-500 to-cyan-400 text-transparent bg-clip-text text-xl mb-4 ml-2">(Most Popular)</span>}
               </p>
               <p className="mb-8">
                 <span className="text-5xl mt-6 mr-2">{option.price}</span>
-                <span className="text-neutral-400 tracking-tight">/Month</span>
+                <span className="text-slate-400 tracking-tight">/Month</span>
               </p>
               <ul>
                 {option.features.map((feature, index) => (
@@ -28,7 +28,7 @@ const Pricing = () => {
                   </li>
                 ))}
               </ul>
-              <motion.a href="#" className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl hover:bg-orange-900 border border-orange-900 rounded-lg transition duration-200" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} viewport={{ once: false }}>
+              <motion.a href="#" className="inline-flex justify-center items-center text-center w-full h-12 p-5 mt-20 tracking-tight text-xl hover:bg-cyan-900 border border-cyan-900 rounded-lg transition duration-200" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} viewport={{ once: false }}>
                 Subscribe
               </motion.a>
             </div>

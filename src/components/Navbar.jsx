@@ -24,7 +24,7 @@ const Navbar = () => {
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
               <li key={index}>
-                <Link to={item.href.replace("#", "")} smooth={true} duration={500} offset={-80} spy={true} className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full cursor-pointer">
+                <Link to={item.href.replace("#", "")} smooth={true} duration={500} offset={-80} spy={true} className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full cursor-pointer">
                   {item.label}
                 </Link>
               </li>
@@ -33,10 +33,10 @@ const Navbar = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800">
+            <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-cyan-500 to-cyan-800">
               Sign In
             </a>
-            <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800">
+            <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-cyan-500 to-cyan-800">
               Create an account
             </a>
           </div>
@@ -53,17 +53,17 @@ const Navbar = () => {
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
-                  <Link to={item.href.replace("#", "")} smooth={true} duration={500} offset={-80} spy={true} onClick={toggleNavbar} className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full cursor-pointer">
+                  <Link to={item.href.replace("#", "")} smooth={true} duration={500} offset={-80} spy={true} onClick={toggleNavbar} className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full cursor-pointer">
                     {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
             <div className="flex space-x-6 mt-8">
-              <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800">
+              <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-cyan-500 to-cyan-800">
                 Sign In
               </a>
-              <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-orange-500 to-orange-800">
+              <a href="#" className="relative py-2 px-3 border rounded-md cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-cyan-500 after:transition-all after:duration-300 hover:after:w-full hover:bg-gradient-to-r from-cyan-500 to-cyan-800">
                 Create an account
               </a>
             </div>
